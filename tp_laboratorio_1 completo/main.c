@@ -29,8 +29,8 @@ int main()
     while(respuesta=='s')//menu de opciones
     {
         printf("\n Ingrese un numero del 1-5 :\n");
-        printf("1-Para ingrese el primer operando :%.2f\n",primerOperador);// primer numero
-        printf("2-Para ingresar segundo numero :%.2f\n",segundoOperador);// segundo numero
+        printf("1-Para ingrese el primer operando :%.2f\n",primerOperador); // primer numero a ingresar
+        printf("2-Para ingresar segundo numero :%.2f\n",segundoOperador); // segundo numero a ingresar
         printf("3-Para calcular las operaciones :\n");
         printf("4-Para informar los resultados :\n");
         printf("5-Salir :\n");

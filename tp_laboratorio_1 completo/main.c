@@ -41,11 +41,11 @@ int main()
     switch(dato)
     {
         case 1:
-        primerOperador=ingresarNumero(primerOperador);
+        primerOperador=ingresarNumero(primerOperador);// ingresa el primer numero 
         break;
 
         case 2:
-        segundoOperador=ingresarNumero(segundoOperador);
+        segundoOperador=ingresarNumero(segundoOperador);//ingresa el primer numero
         break;
 
         case 3:// calcula los operadores que ingresa el usuario

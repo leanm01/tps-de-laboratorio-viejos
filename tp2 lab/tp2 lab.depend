@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1601568065 source:c:\users\leandro\desktop\tp2 lab\laboratorio.c
+	<stdio.h>
+	<stdlib.h>
+	"laboratorio.h"
+	<strings.h>
+	<ctype.h>
+	<conio.h>
+
+1601568316 source:c:\users\leandro\desktop\tp2 lab\main.c
+	<stdio.h>
+	<stdlib.h>
+	"laboratorio.h"
+
+1601568279 c:\users\leandro\desktop\tp2 lab\laboratorio.h
+
+1601226706 source:c:\users\leandro\desktop\tp2 lab\utn.c
+

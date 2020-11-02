@@ -7,7 +7,7 @@
 
 Employee* employee_new()
 {
-		Employee* new= (Employee*)malloc(sizeof(Employee));
+	Employee* new= (Employee*)malloc(sizeof(Employee));
         return new ;
 
 }
@@ -18,10 +18,10 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 
     if(this != NULL)
     {
-           if(   employee_setId(this,atoi(idStr))!= -1  &&
-        		 employee_setNombre(this,nombreStr) != -1 &&
-        		 employee_setHorasTrabajadas(this,atoi(horasTrabajadasStr)) != -1 &&
-				 employee_setSueldo(this,atoi(sueldoStr)) != -1  )
+           if(    employee_setId(this,atoi(idStr))!= -1  &&
+                  employee_setNombre(this,nombreStr) != -1 &&
+                  employee_setHorasTrabajadas(this,atoi(horasTrabajadasStr)) != -1 &&
+		  employee_setSueldo(this,atoi(sueldoStr)) != -1  )
                 {
                       return this;
                 }
@@ -183,11 +183,11 @@ int employee_sortID(void* employeeUno, void* employeeDos)
     employee_getId(employeeUno,&auxUno);
     employee_getId(employeeDos,&auxDos);
 
-        if(auxUno > auxDos)
+        if(auxUno>auxDos)
         {
         	retorno = 1;
         }
-        else if(auxUno == auxDos)
+        else if(auxUno==auxDos)
         {
         	retorno = 0;
         }
@@ -201,23 +201,23 @@ int employee_sortID(void* employeeUno, void* employeeDos)
 int employee_sortName(void* employeeUno, void* employeeDos)
 {
     int retorno;
-    char auxUno[51];
-	char auxDos[51];
+    char auxUno[128];
+    char auxDos[128];
 
     employee_getNombre(employeeUno,auxUno);
     employee_getNombre(employeeDos,auxDos);
 
       if(strcmp(auxUno,auxDos)>0)
         {
-        	retorno = 1;
+        	retorno=1;
         }
         else if(strcmp(auxUno,auxDos)==0)
          {
-        	retorno = 0;
+        	retorno=0;
          }
          else
           {
-        	 retorno = -1;
+        	 retorno=-1;
           }
 
     return retorno;

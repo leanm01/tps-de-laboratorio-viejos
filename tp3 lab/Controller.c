@@ -173,9 +173,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 	                        	auxSalario =getInt("Ingresar el salario del empleado: ");
 	                            employee_setSueldo(auxEmpleado, auxSalario);
 	                            break;
-	                        case 4:
-	                        	opcion = 4;
-	                            break;
+	                      
 	                        default:
 	                            printf("\n Ingresar la opcion correcta: \n");
 	                            break;

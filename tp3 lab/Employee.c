@@ -148,6 +148,7 @@ int employee_getSueldo(Employee* this,int* sueldo)
 
 
 }
+/////////////////////////////////////////////////////////////////////////////ENCONTRAR POR ID
 int controller_FindId(LinkedList* pArrayListEmployee,int idUser)
 {
 	Employee* pEmpleado = NULL;
@@ -172,6 +173,7 @@ int controller_FindId(LinkedList* pArrayListEmployee,int idUser)
 
 	return -1;
 }
+//////////////////////////////////////////////////////////////////////////ORDENAMIENTO
 int employee_sortID(void* employeeUno, void* employeeDos)
 {
     int retorno;

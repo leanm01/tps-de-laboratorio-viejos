@@ -104,9 +104,9 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 	        }
 	        if(getId != NuevoEmployee->id)
 	        {
-	            getString("Ingrese nombre: ", auxNombre);
-	            getString("Ingrese horas: ", auxHorasTrabajadas);
-	            getString("Ingrese salario: ", auxSalario);
+	            getString("Ingrese un nombre: ", auxNombre);
+	            getString("Ingrese las horas: ", auxHorasTrabajadas);
+	            getString("Ingrese un salario: ", auxSalario);
 
 	            NuevoEmployee = employee_newParametros(auxId, auxNombre, auxHorasTrabajadas, auxSalario);
 
@@ -140,51 +140,48 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 	 int  i;
 	 int  len;
 	 int  opcion = 0;
-
-
 	 len = ll_len(pArrayListEmployee);
 
-	    if(pArrayListEmployee !=NULL)
-	    {
-	    	auxId =getInt("\nIngrese id del empleado para modificar: ");
+	 if(pArrayListEmployee !=NULL)
+	 {
+		 auxId =getInt("\nIngrese id del empleado para modificar: ");
 
-	        for(i=0; i<len; i++)
-	        {
-	        	auxEmpleado = (Employee*) ll_get(pArrayListEmployee, i);
+		 for(i=0; i<len; i++)
+		 {
+			 auxEmpleado = (Employee*) ll_get(pArrayListEmployee, i);
 
-	            if(auxId == auxEmpleado->id)
-	            {
+			 if(auxId == auxEmpleado->id)
+			 {
 
-	                do
-	                {
-	                	opcion =getInt("\n1.Nombre-\n2.Horas trabajadas-\n3.Salario-\n4.Salir-\nIngresar una opcion ");
+				 do
+				 {
+					 opcion =getInt("\n1.Nombre-\n2.Horas trabajadas-\n3.Salario-\n4.Salir-\nIngresar una opcion: ");
 
-	                    switch(opcion)
-	                    {
-	                        case 1:
-	                        	getString("\nIngresar el nombre del empleado: ",auxNombre);
-	                            employee_setNombre(auxEmpleado, auxNombre);
-	                            break;
-	                        case 2:
-	                        	auxHorasTrabajadas =getInt("Ingresar las horas de trabajo: ");
-	                            employee_setHorasTrabajadas(auxEmpleado, auxHorasTrabajadas);
-	                            break;
-	                        case 3:
-	                        	auxSalario =getInt("Ingresar el salario del empleado: ");
-	                            employee_setSueldo(auxEmpleado, auxSalario);
-	                            break;
-	                      
-	                        default:
-	                            printf("\n Ingresar la opcion correcta: \n");
-	                            break;
-	                    }
+					 switch(opcion)
+					 {
+					 	 case 1:
+							getString("\nIngresar el nombre del empleado: ",auxNombre);
+							employee_setNombre(auxEmpleado, auxNombre);
+							break;
+						case 2:
+							auxHorasTrabajadas =getInt("Ingresar las horas de trabajo: ");
+							employee_setHorasTrabajadas(auxEmpleado, auxHorasTrabajadas);
+							break;
+						case 3:
+							auxSalario =getInt("Ingresar el salario del empleado: ");
+							employee_setSueldo(auxEmpleado, auxSalario);
+							break;
+						default:
+							printf("\n Ingresar la opcion correcta: \n");
+							break;
+					}
 
-	                }
-	                while(opcion != 4);
-                 }
-	        }
+				}
+				while(opcion != 4);
+			 }
+		}
 
-	    }
+	}
 
    return retorno;
 }
@@ -233,7 +230,6 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 	 int  auxSueldo;
 	 int  len = ll_len(pArrayListEmployee);
 	 Employee* pEmpleado=employee_new();
-	 printf("Len = %d\n",len);
 	 if(pEmpleado !=NULL && len >0 && pArrayListEmployee != NULL )
 	 {
 		printf("---ID---|---NOMBRE---|---HORAS TRABAJADAS|---SALARIO\n");

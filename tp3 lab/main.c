@@ -1,3 +1,8 @@
+/*
+ALUMNO:MERINO LEANDRO
+DIVISION:1B
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "LinkedList.h"

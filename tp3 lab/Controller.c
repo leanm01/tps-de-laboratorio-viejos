@@ -81,7 +81,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)////////////////agrega
 
 	int getId;
 	int len;
-
+    int unAux;
 
     len = ll_len(pArrayListEmployee);
 
@@ -93,8 +93,9 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)////////////////agrega
 	        for(int i=0;i<len;i++)
 	        {
 	        	NuevoEmployee = (Employee*) ll_get(pArrayListEmployee,i);
+	        	employee_getId(NuevoEmployee,&unAux);
 
-	            if(getId == NuevoEmployee->id)//////////////////////
+	            if(getId == unAux)//////////////////////
 	            {
 	                printf("este ID ya esta en uso\n");
 	                retorno = 1;
@@ -102,7 +103,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)////////////////agrega
 	                break;
 	            }
 	        }
-	        if(getId != NuevoEmployee->id)/////////////////////////
+	        if(getId != unAux)/////////////////////////
 	        {
 	            getString("Ingrese un nombre: ", auxNombre);
 	            getString("Ingrese las horas: ", auxHorasTrabajadas);
@@ -140,6 +141,8 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)//////////////editar 
 	 int  i;
 	 int  len;
 	 int  opcion = 0;
+	 int  unAux;
+
 	 len = ll_len(pArrayListEmployee);
 
 	 if(pArrayListEmployee !=NULL)
@@ -149,8 +152,8 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)//////////////editar 
 		 for(i=0; i<len; i++)
 		 {
 			 auxEmpleado = (Employee*) ll_get(pArrayListEmployee, i);
-
-			 if(auxId == auxEmpleado->id)////////////////////
+			 employee_getId(auxEmpleado,&unAux);
+			 if(auxId == unAux)////////////////////
 			 {
 
 				 do
@@ -312,6 +315,11 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)//////////
 
 	Employee* auxEmpleado;
 
+
+	int  auxId;
+	char auxNombre[128];
+	int  auxHorasTrabajadas;
+	int  auxSueldo;
 	int len;
 
 	pFile = fopen(path,"w");
@@ -322,7 +330,12 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)//////////
 	        for(int i=0;i<len;i++)
 	        {
 	        	auxEmpleado = (Employee*) ll_get(pArrayListEmployee, i);
-	            fprintf(pFile,"%d,%s,%d,%d\n", auxEmpleado->id, auxEmpleado->nombre, auxEmpleado->horasTrabajadas, auxEmpleado->sueldo);
+
+	        	employee_getId(auxEmpleado,&auxId);
+	        	employee_getNombre(auxEmpleado,auxNombre);
+	        	employee_getHorasTrabajadas(auxEmpleado,&auxHorasTrabajadas);
+	        	employee_getSueldo(auxEmpleado,&auxSueldo);
+	        	//fprintf(pFile,"%d,%s,%d,%d\n", auxEmpleado->id, auxEmpleado->nombre, auxEmpleado->horasTrabajadas, auxEmpleado->sueldo);//////////////
 	        }
 	        printf("Se guardaron los datos en forma de:|(texto)|\n");
 	        fclose(pFile);

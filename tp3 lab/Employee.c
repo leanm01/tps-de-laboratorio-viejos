@@ -174,38 +174,38 @@ int controller_FindId(LinkedList* pArrayListEmployee,int idUser)
 }
 int employee_sortID(void* employeeUno, void* employeeDos)
 {
-    int retorno;
+    int retorno=0;
 	int auxUno;
 	int auxDos;
 
     employee_getId(employeeUno,&auxUno);
     employee_getId(employeeDos,&auxDos);
 
-        if(auxUno > auxDos)
+        if(auxUno>auxDos)//si es mayor lo ordena
         {
         	retorno = 1;
         }
-        else if(auxUno == auxDos)
+        else if(auxUno==auxDos)//lo deja igual
         {
         	retorno = 0;
         }
         else
         {
-        	retorno = -1;
+        	retorno = -1;//no hace nada
         }
 
     return retorno;
 }
 int employee_sortName(void* employeeUno, void* employeeDos)
 {
-    int retorno;
+    int retorno=0;
     char auxUno[128];
 	char auxDos[128];
 
     employee_getNombre(employeeUno,auxUno);
     employee_getNombre(employeeDos,auxDos);
 
-      if(strcmp(auxUno,auxDos)>0)
+      if(strcmp(auxUno,auxDos)>0)//ordena alfabeticamente
         {
         	retorno = 1;
         }

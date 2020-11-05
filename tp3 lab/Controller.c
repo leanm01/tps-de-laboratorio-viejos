@@ -14,7 +14,7 @@
  * \return int
  *
  */
-int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
+int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)////////////cargar los datos forma texto
 {
 
      FILE* pArchivo;
@@ -38,7 +38,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
+int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)////////////cargar datos forma binario
 {
 
 	 FILE* pArchivo;
@@ -66,7 +66,7 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_addEmployee(LinkedList* pArrayListEmployee)
+int controller_addEmployee(LinkedList* pArrayListEmployee)////////////////agregar empleado
 {
 
 	Employee* NuevoEmployee = employee_new();
@@ -127,7 +127,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_editEmployee(LinkedList* pArrayListEmployee)
+int controller_editEmployee(LinkedList* pArrayListEmployee)//////////////editar empleado
 {
 	 Employee* auxEmpleado = employee_new();
 
@@ -193,7 +193,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_removeEmployee(LinkedList* pArrayListEmployee)
+int controller_removeEmployee(LinkedList* pArrayListEmployee)/////////////////eliminar empleado
 {
 	    int retorno = 0;
 	    int idEmpleado;
@@ -222,7 +222,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_ListEmployee(LinkedList* pArrayListEmployee)
+int controller_ListEmployee(LinkedList* pArrayListEmployee)///////////////mostrar empleados
 {
 	 int  auxId;
 	 char auxNombre[128];
@@ -255,7 +255,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_sortEmployee(LinkedList* pArrayListEmployee)
+int controller_sortEmployee(LinkedList* pArrayListEmployee)////////////////ordenar empleados
 {
      int retorno=0;
 
@@ -276,7 +276,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 	                break;
 
 	            default:
-	                printf("No es una opcion valida");
+	                printf("No es una opcion valida\n");
 	                break;
 	        }
 	    }
@@ -291,7 +291,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
+int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)////////////guardar forma texto
 {
 
 	FILE* pFile;
@@ -329,7 +329,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
+int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)///////guardar forma binario
 {
     FILE* pFile;
 	Employee* auxEmpleado;

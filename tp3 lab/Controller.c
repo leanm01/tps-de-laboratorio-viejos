@@ -19,7 +19,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)////////
 
      FILE* pArchivo;
 
-     pArchivo=fopen(path,"r");
+     pArchivo=fopen(path,"r");//abre el archivo y lo lee (texto)
 
      if(pArchivo!=NULL)
      {
@@ -43,7 +43,7 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)//////
 
 	 FILE* pArchivo;
 
-	     pArchivo=fopen(path,"rb");
+	     pArchivo=fopen(path,"rb");//abre el archivo y lo lee (binario)
 
 	     if(pArchivo!=NULL)
 	     {
@@ -94,7 +94,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)////////////////agrega
 	        {
 	        	NuevoEmployee = (Employee*) ll_get(pArrayListEmployee,i);
 
-	            if(getId == NuevoEmployee->id)
+	            if(getId == NuevoEmployee->id)//////////////////////
 	            {
 	                printf("este ID ya esta en uso\n");
 	                retorno = 1;
@@ -102,7 +102,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)////////////////agrega
 	                break;
 	            }
 	        }
-	        if(getId != NuevoEmployee->id)
+	        if(getId != NuevoEmployee->id)/////////////////////////
 	        {
 	            getString("Ingrese un nombre: ", auxNombre);
 	            getString("Ingrese las horas: ", auxHorasTrabajadas);
@@ -150,7 +150,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)//////////////editar 
 		 {
 			 auxEmpleado = (Employee*) ll_get(pArrayListEmployee, i);
 
-			 if(auxId == auxEmpleado->id)
+			 if(auxId == auxEmpleado->id)////////////////////
 			 {
 
 				 do
@@ -224,10 +224,6 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)/////////////////el
  */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)///////////////mostrar empleados
 {
-	 int  auxId;
-	 char auxNombre[128];
-	 int  auxHorasTrabajadas;
-	 int  auxSueldo;
 	 int  len = ll_len(pArrayListEmployee);
 	 Employee* pEmpleado=employee_new();
 	 if(pEmpleado !=NULL && len >0 && pArrayListEmployee != NULL )
@@ -237,15 +233,33 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)///////////////mostra
 		{
 			pEmpleado=ll_get(pArrayListEmployee,i);
 
-				 employee_getId(pEmpleado,&auxId);
-				 employee_getNombre(pEmpleado,auxNombre);
-				 employee_getHorasTrabajadas(pEmpleado,&auxHorasTrabajadas);
-				 employee_getSueldo(pEmpleado,&auxSueldo);
-				 printf("%4d %13s %14d %15d \n", auxId, auxNombre, auxHorasTrabajadas, auxSueldo);
+			     printEmployee(pEmpleado);
 
-		 }
+        }
+
+
 	 }
 	 return 1;
+}
+
+void printEmployee(Employee* pEmpleado)
+{
+
+
+	 int  auxId;
+	 char auxNombre[128];
+	 int  auxHorasTrabajadas;
+	 int  auxSueldo;
+
+
+
+	employee_getId(pEmpleado,&auxId);
+	employee_getNombre(pEmpleado,auxNombre);
+	employee_getHorasTrabajadas(pEmpleado,&auxHorasTrabajadas);
+	employee_getSueldo(pEmpleado,&auxSueldo);
+    printf("%4d %13s %14d %15d \n", auxId, auxNombre, auxHorasTrabajadas, auxSueldo);
+
+
 }
 
 /** \brief Ordenar empleados

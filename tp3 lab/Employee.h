@@ -13,6 +13,8 @@ Employee* employee_new();
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr);
 void employee_delete();
 
+void printEmployee(Employee*);
+
 ////////////////////////////////////////////////////////ID
 int employee_setId(Employee* this,int id);
 int employee_getId(Employee* this,int* id);

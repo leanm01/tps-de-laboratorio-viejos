@@ -1,8 +1,3 @@
-/*
-ALUMNO:MERINO LEANDRO
-DIVISION:1B
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "LinkedList.h"
@@ -14,7 +9,7 @@ int main()
 {
 	setbuf(stdout, NULL);
 	int terminar=0;
-	int bandera =0;
+	int bandera=0;
     LinkedList* listaEmpleados = ll_newLinkedList();
 
     do

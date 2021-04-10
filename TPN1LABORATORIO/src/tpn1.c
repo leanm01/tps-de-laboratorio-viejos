@@ -88,12 +88,27 @@ int main()
         		printf("ERROR....No se puede dividir por 0\n");
         	}
 
-        	printf("el primer operador en factorial es: %.2f y el segundo en factorial es: %.2f\n",factorialPrimerOperando,factorialSegundoOperando);
+        	if(primerOperador>=15)
+        	{
+        	printf("ERROR...el numero es demasiado grande\n");
+        	}else
+            {
+            printf("el primer operador en factorial es: %.2f \n",factorialPrimerOperando);
+            }
+
+        	if(segundoOperador>=15)
+        	{
+        	 printf("ERROR...el numero es demasiado grande\n");
+        	}else
+        	{
+        	 printf("el segundo operador en factorial es: %.2f \n",factorialSegundoOperando);
+        	}
 
         	system("pause");
         	break;
 
-        case 5:// cierra el programa
+
+        case 5:
         	respuesta='n';
         	break;
 

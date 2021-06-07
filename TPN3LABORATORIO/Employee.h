@@ -15,24 +15,24 @@ void employee_delete();
 
 void printEmployee(Employee*);
 
-////////////////////////////////////////////////////////ID
+
 int employee_setId(Employee* this,int id);
 int employee_getId(Employee* this,int* id);
 
-/////////////////////////////////////////////////////////NOMBRE
+
 int employee_setNombre(Employee* this,char* nombre);
 int employee_getNombre(Employee* this,char* nombre);
 
-//////////////////////////////////////////////////////////////////////////HORAS TRABAJADAS
+
 int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas);
 int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
 
-/////////////////////////////////////////////////////////////SUELDO
+
 int employee_setSueldo(Employee* this,int sueldo);
 int employee_getSueldo(Employee* this,int* sueldo);
-/////////////////////////////////////////////////////////////////////////////////ENCONTRAR POR ID
+
 int employee_findById(LinkedList* pArrayListEmployee, int id, int* pIndex);
-////////////////////////////////////////////////////////////////////////////////ORDENAMIENTO
+
 int employee_sortID(void* employeeUno, void* employeeDos);
 int employee_sortName(void* employeeUno, void* employeeDos);
 

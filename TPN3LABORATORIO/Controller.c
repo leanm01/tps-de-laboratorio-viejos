@@ -148,6 +148,9 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
 	 if(pArrayListEmployee !=NULL)
 	 {
+
+		 controller_ListEmployee(pArrayListEmployee);
+
 		 auxId =getInt("\nIngrese id del empleado para modificar: ");
 
 		 for(i=0; i<len; i++)
@@ -205,12 +208,16 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 	    if(pArrayListEmployee != NULL)
 	    {
 	    	controller_ListEmployee(pArrayListEmployee);
+
 	    	printf("\nIngrese el usuario que quiere eliminar: ");
 	    	fflush(stdin);
 	    	scanf("%d",&idEmpleado);
+
+	    	ll_remove(pArrayListEmployee, controller_FindId(pArrayListEmployee,idEmpleado));
+
 	    	printf("\nSe elimino el id:%d \n",idEmpleado);
 
-			ll_remove(pArrayListEmployee, controller_FindId(pArrayListEmployee,idEmpleado));
+			//ll_remove(pArrayListEmployee, controller_FindId(pArrayListEmployee,idEmpleado));
 			retorno = 0;
 
 

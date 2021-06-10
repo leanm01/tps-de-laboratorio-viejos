@@ -15,8 +15,6 @@ Employee* employee_new()
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr)
 {
 
-	//
-
 	Employee* this = employee_new();
 
     if(this != NULL)

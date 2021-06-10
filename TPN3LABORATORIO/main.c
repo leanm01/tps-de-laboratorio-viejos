@@ -1,7 +1,7 @@
 /*
  MERINO LEANDRO
 
- TP_LABO_3
+ TP_LABORATORIO_3
 
  */
 

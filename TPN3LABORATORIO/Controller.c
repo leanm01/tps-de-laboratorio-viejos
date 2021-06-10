@@ -204,7 +204,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
 	    int retorno = 0;
 	    int idEmpleado;
-
+	    char auxChar;
 	    if(pArrayListEmployee != NULL)
 	    {
 	    	controller_ListEmployee(pArrayListEmployee);
@@ -213,12 +213,20 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 	    	fflush(stdin);
 	    	scanf("%d",&idEmpleado);
 
-	    	ll_remove(pArrayListEmployee, controller_FindId(pArrayListEmployee,idEmpleado));
+	    	utn_getChar("\nDesea elimnar este usuario(s--O--n): ","\nIngrese la opcion correcta entre(s--O--n): ",&auxChar,2);
 
-	    	printf("\nSe elimino el id:%d \n",idEmpleado);
+	    	if(auxChar=='s')
+	    	{
+	    		ll_remove(pArrayListEmployee, controller_FindId(pArrayListEmployee,idEmpleado));
+	    		printf("\nSe elimino el id:%d \n",idEmpleado);
+	        }
+	    	else
+	    	{
+	    		printf("\nNO se elimino el id:%d \n",idEmpleado);
 
-			//ll_remove(pArrayListEmployee, controller_FindId(pArrayListEmployee,idEmpleado));
-			retorno = 0;
+	    	}
+
+            retorno = 0;
 
 
 	    }
@@ -284,7 +292,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 
 	    if(pArrayListEmployee != NULL)
 	    {
-	        option = getInt("\n1. Ordenar por ID\n2. Ordenar por Nombre\n3.\nIngrese una opcion: ");
+	        option = getInt("\n1. Ordenar por ID\n2. Ordenar por Nombre\n3. salir\nIngrese una opcion: ");
 
 
 	        switch(option)
@@ -297,7 +305,6 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 	                break;
 
 	            default:
-	                printf("No es una opcion valida\n");
 	                break;
 	        }
 	    }

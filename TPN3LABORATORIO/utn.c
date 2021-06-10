@@ -48,7 +48,36 @@ int menu()
     return opcion;
 }
 
-
+int utn_getChar(char* mensaje, char* mensajeError, char* pResultado,int reintentos)
+{
+	int retorno = -1;
+	char bufferChar;
+	int resultadoScanf;
+	if(		mensaje != NULL &&
+			mensajeError != NULL &&
+			pResultado != NULL &&
+			reintentos >= 0 )
+	{
+		do
+		{
+			printf("%s",mensaje);
+			fflush(stdin); // fflush // __fpurge
+			resultadoScanf = scanf("%c" , &bufferChar);
+			if(resultadoScanf == 1 && (bufferChar == 's' || bufferChar == 'n'))
+			{
+				retorno = 0;
+				*pResultado = bufferChar;
+				break;
+			}
+			else
+			{
+				printf("%s",mensajeError);
+				reintentos--;
+			}
+		}while(reintentos >= 0);
+	}
+	return retorno;
+}
 
 
 

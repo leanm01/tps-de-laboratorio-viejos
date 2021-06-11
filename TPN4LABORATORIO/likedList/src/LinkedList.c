@@ -55,7 +55,7 @@ static Node* getNode(LinkedList* this, int nodeIndex)
 {
 
 	Node* pNode = NULL;
-	if(this!=NULL && nodeIndex>=0 && nodeIndex<=ll_len(this))
+	if(this!=NULL && nodeIndex>=0 && nodeIndex<ll_len(this))
 	{
 
 		pNode = this->pFirstNode;

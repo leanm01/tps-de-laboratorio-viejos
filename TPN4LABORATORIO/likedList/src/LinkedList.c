@@ -504,7 +504,7 @@ LinkedList* ll_subList(LinkedList* this,int from,int to)
     Node* auxNodo;
     int i;
 
-    if(this!=NULL && from >=0 && to <=ll_len(this))
+    if(this!=NULL && from >=0 && to <=ll_len(this))//from es desde y to hasta
     {
         cloneArray = ll_newLinkedList();
 

@@ -582,4 +582,28 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
      return returnAux;
 
 }
+int ll_map(LinkedList* this,int (*pFunc)(void*))
+{
+	int returnAux =-1;
+	void* pElemento;
+	int i;
+
+	if(this!=NULL)
+	{
+
+		for(i=0;i<ll_len(this);i++)
+		{
+
+			pElemento=ll_get(this, i);
+			pFunc(pElemento);
+			returnAux=0;
+
+		}
+
+
+	}
+
+
+	return returnAux;
+}
 

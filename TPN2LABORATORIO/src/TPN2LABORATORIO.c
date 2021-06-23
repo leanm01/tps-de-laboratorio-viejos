@@ -21,7 +21,7 @@ o Salario o Sector
 #include <string.h>
 #include <ctype.h>
 #include "empleados.h"
-#define TAM_EMP 5
+#define TAM_EMP 1000
 #include "UTN.h"
 
 int main()

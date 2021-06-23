@@ -2,17 +2,17 @@
  ============================================================================
  MERINO LEANDRO
 
-1. ALTAS: Se debe permitir ingresar un empleado calculando autom·ticamente el n˙mero
-de Id. El resto de los campos se le pedir· al usuario.
+1. ALTAS: Se debe permitir ingresar un empleado calculando autom√°ticamente el n√∫mero
+de Id. El resto de los campos se le pedir√° al usuario.
 
-2. MODIFICAR: Se ingresar· el N˙mero de Id, permitiendo modificar: o Nombre o Apellido
+2. MODIFICAR: Se ingresar√° el N√∫mero de Id, permitiendo modificar: o Nombre o Apellido
 o Salario o Sector
 
-3. BAJA: Se ingresar· el N˙mero de Id y se eliminar· el empleado del sistema.
+3. BAJA: Se ingresar√° el N√∫mero de Id y se eliminar√° el empleado del sistema.
 
 4. INFORMAR:
-1. Listado de los empleados ordenados alfabÈticamente por Apellido y Sector.
-2. Total y promedio de los salarios, y cu·ntos empleados superan el salario promedio.
+1. Listado de los empleados ordenados alfab√©ticamente por Apellido y Sector.
+2. Total y promedio de los salarios, y cu√°ntos empleados superan el salario promedio.
  ============================================================================
  */
 
@@ -137,9 +137,28 @@ int main()
                              break;
                        case 2:
 
-                    	     printf("\nTotal y promedio de los salarios\n");
-                    	     promedioTotal(lista, TAM_EMP);
-                             break;
+                    	   if (hayEmpleado==0)
+                    	   {
+                    	          printf("\nNo hay empleados para mostrar!!\n\n");
+                    	   }
+                    	    else
+                    	    {
+                    	         promedioTotal(lista, TAM_EMP);
+
+                    	         if (estadoBaja==-1)
+                    	         {
+
+                    	        	 printf("\nOperacion erronea!!\n\n");
+
+                    	         }
+                    	          else
+                    	          {
+                    	           printf("\nOperacion exitosa!!\n\n");
+
+                    	          }
+                    	     }
+			   
+			   break;
                        case 3:
 
                     	   printf("\nSalir\n");

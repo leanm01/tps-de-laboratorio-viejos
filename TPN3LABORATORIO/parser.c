@@ -31,7 +31,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 			//luego de llamar al FILE fuera del do, se lo asignamos a la variable len para poder realizar las validaciones del if
 			if (len==4)
 			   {
-				  Employee* pEmpleado=employee_new();
+				  Employee* pEmpleado=employee_new();//le asignamos la funcion employee_new a la estructura empleado
 				  if(pEmpleado!=NULL)
 				  {
 

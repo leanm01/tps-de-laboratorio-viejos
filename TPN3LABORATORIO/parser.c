@@ -23,7 +23,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 		char horasTrabajadas[128];
 		char sueldo[128];
 
-		fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",id,nombre,horasTrabajadas,sueldo);
+		fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",id,nombre,horasTrabajadas,sueldo);// fscanf se puede utilizar para leer el archivo regular línea por línea y almacenarlos en el búfer.
 		do
 		{
 			len= fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n ",id,nombre,horasTrabajadas,sueldo);

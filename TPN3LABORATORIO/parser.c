@@ -41,7 +41,8 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 				  }
 			   }
 		}
-		while(!feof(pFile));
+		while(!feof(pFile));//la función feof comprueba el indicador de fin de archivo en el flujo de archivo dado y 
+				    //devuelve un número entero distinto de cero si se establece EOF
 
 		retorno=0;
 	}

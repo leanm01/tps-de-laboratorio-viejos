@@ -33,7 +33,7 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 
 void employee_delete(Employee* this)
 {
-	free(this);
+	free(this);//e usa para liberar memoria asignada por malloc, calloc
 }
 
 
